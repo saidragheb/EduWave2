@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+  font-family: "Segoe UI", Tahoma, poppins, Verdana, sans-serif;
+}
+
+.bg-orange {
+  background-color: #ffb396;
+}
+
+.text-orange {
+  color: #ffb396;
+}
+
+.shadow-sm {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+  border-radius: 12px;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #f8f8f8;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+.nav-link:hover {
+  color: #ff5733;
+}
+#ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#account:hover {
+  color: #ff5733;
+}
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.fas.fa-user {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-left: 100px;
+}
+
+/* Hero Section Styles */
+.hero h1 {
+  color: #000000;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  color: #7e7e7e;
+  font-size: 1.125rem;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 1.125rem;
+  border-radius: 8px;
+}
+#but {
+  color: white;
+  transition: background-color 0.3s;
+}
+#but:hover {
+  background-color: #ff5733 !important;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Services Section */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.875rem;
+}
+
+.fas.fa-clock,
+.fas.fa-chalkboard-teacher,
+.fas.fa-headset {
+  color: #ffb396;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Partners Section */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: #ffb396;
+}
+
+/* Courses Section */
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card-body .text-muted {
+  color: #7e7e7e;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.badge.bg-orange {
+  background-color: #ff5733;
+  color: #fff;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.fas.fa-star {
+  color: #ff5733;
+  font-size: 1rem;
+}
+
+.fas.fa-video,
+.fas.fa-user-friends {
+  color: #ff5733;
+  font-size: 1rem;
+}
+
+.btn-orange {
+  background-color: #ffb396;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #ff6733;
+}
+.enroll:hover {
+  color: white !important;
+  background-color: #ff6733 !important;
+}
+
+/* Categories Section */
+.card h5 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+}
+
+.card a {
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.fas.fa-pencil-alt,
+.fas.fa-code,
+.fas.fa-bullhorn {
+  color: #080808;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials Section */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ffb396;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.carousel-control-prev-icon {
+  transform: scale(1.2);
+}
+
+.carousel-control-next-icon {
+  transform: scale(1.2);
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-body img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.card h5 {
+  font-size: 1.25rem;
+  color: #000000;
+}
+
+.card p.text-orange {
+  font-size: 1rem;
+  color: #ff5733;
+}
+
+/* Footer Section */
+
+footer h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+footer p,
+footer li {
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+}
+
+footer li {
+  line-height: 1.5;
+}
+
+footer small {
+  font-size: 0.75rem;
+}
+
+footer .btn-light {
+  background-color: #ffffff;
+  color: #161616;
+  border-radius: 8px;
+  padding: 5px 15px;
+}
+
+footer .input-group input {
+  border-radius: 8px 0 0 8px;
+  padding: 10px;
+}
+
+footer .input-group button {
+  border-radius: 0 8px 8px 0;
+  padding: 10px 20px;
+}

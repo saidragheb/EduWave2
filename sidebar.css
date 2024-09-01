@@ -1,0 +1,54 @@
+/* Sidebar Styles */
+.auth-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.auth-sidebar.active {
+    right: 0;
+}
+
+.auth-sidebar-content {
+    padding: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 900;
+}
+
+/* Button Styles */
+.btn-orange {
+    background-color: #fab597;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #e5947f;
+}
+
+.input-group-text {
+    background-color: #ffffff;
+    border-left: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}

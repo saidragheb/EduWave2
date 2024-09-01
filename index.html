@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduWave</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <img src="img/logo.svg" alt="EduWave" width="120px" height="120px" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto" id="ul">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Courses">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Categories">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+            <li class="nav-item" id="account">
+              <a href="#" class="nav-link" id="userIcon">
+                <i class="fas fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Login/Register Sidebar -->
+    <div id="authSidebar" class="auth-sidebar">
+      <div class="auth-sidebar-content p-4">
+        <button id="closeSidebar" class="btn-close float-end"></button>
+        <h2 id="authTitle" class="text-center mb-4">Login</h2>
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter your password"
+              />
+              <span class="input-group-text">
+                <i class="fas fa-eye"></i>
+              </span>
+            </div>
+          </div>
+          <div class="mb-3 d-grid">
+            <button type="submit" class="btn btn-orange">Login</button>
+          </div>
+          <div class="text-center mb-3">OR</div>
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-light text-dark">
+              <i class="fab fa-google me-2"></i> Sign in with Google
+            </button>
+            <button type="button" class="btn btn-light text-dark">
+              <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
+            </button>
+          </div>
+          <div class="text-center mt-4">
+            <p>
+              Don't have an account?
+              <a href="#" id="showRegister" class="text-orange fw-bold"
+                >Sign up</a
+              >
+            </p>
+          </div>
+        </form>
+
+        <form id="registerForm" style="display: none">
+          <div class="mb-3">
+            <label for="reg-email" class="form-label">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="reg-email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="reg-password" class="form-label">Password</label>
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="reg-password"
+                placeholder="Enter your password"
+              />
+              <span class="input-group-text">
+                <i class="fas fa-eye"></i>
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="confirm-password" class="form-label"
+              >Confirm Password</label
+            >
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="confirm-password"
+                placeholder="Confirm your password"
+              />
+              <span class="input-group-text">
+                <i class="fas fa-eye"></i>
+              </span>
+            </div>
+          </div>
+          <div class="mb-3 d-grid">
+            <button type="submit" class="btn btn-orange">Sign Up</button>
+          </div>
+          <div class="text-center mb-3">OR</div>
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-light text-dark">
+              <i class="fab fa-google me-2"></i> Sign up with Google
+            </button>
+            <button type="button" class="btn btn-light text-dark">
+              <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+            </button>
+          </div>
+          <div class="text-center mt-4">
+            <p>
+              Already have an account?
+              <a href="#" id="showLogin" class="text-orange fw-bold">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="fw-bold mb-4">
+              Start Learning With Our Experts, <br />Anywhere, Anytime
+            </h1>
+            <p class="lead text-muted mb-4">
+              EduWave is an online platform offering a wide range of courses to
+              help you learn and grow. Discover new skills and start your
+              journey with us today!
+            </p>
+            <a
+              href="#"
+              class="btn btn-lg"
+              id="but"
+              style="background-color: #ffb396"
+              >Get Started</a
+            >
+          </div>
+          <div class="col-md-6 text-center">
+            <img
+              src="img/figure.png"
+              alt="Learning Image"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section with Custom Carousel -->
+    <section class="py-5" style="background-color: #ffb396">
+      <div class="container">
+        <h2 class="text-center fw-bold text-dark mb-4">
+          Our trusted partners around the world
+        </h2>
+        <div
+          id="partnersCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-flex justify-content-around align-items-center">
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/m.png"
+                    class="card-img-top p-3"
+                    alt="Partner 1"
+                  />
+                </div>
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/img.png"
+                    class="card-img-top p-3"
+                    alt="Partner 2"
+                  />
+                </div>
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/time.png"
+                    class="card-img-top p-3"
+                    alt="Partner 3"
+                  />
+                </div>
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/sushi.png"
+                    class="card-img-top p-3"
+                    alt="Partner 4"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex justify-content-around align-items-center">
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/ob.png"
+                    class="card-img-top p-3"
+                    alt="Partner 1"
+                  />
+                </div>
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/paint.png"
+                    class="card-img-top p-3"
+                    alt="Partner 2"
+                  />
+                </div>
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/love.png"
+                    class="card-img-top p-3"
+                    alt="Partner 3"
+                  />
+                </div>
+                <div
+                  class="card border-0"
+                  style="background-color: #fff; border-radius: 16px"
+                >
+                  <img
+                    src="img/belle.png"
+                    class="card-img-top p-3"
+                    alt="Partner 4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#partnersCarousel"
+            data-bs-slide="prev"
+            style="top: 40%; transform: translateY(-50%)"
+          >
+            <span
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+              style="filter: invert(100%)"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#partnersCarousel"
+            data-bs-slide="next"
+            style="top: 40%; transform: translateY(-50%)"
+          >
+            <span
+              class="carousel-control-next-icon"
+              aria-hidden="true"
+              style="
+                filter: invert(53%) sepia(62%) saturate(3687%)
+                  hue-rotate(341deg) brightness(99%) contrast(108%);
+              "
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <div class="carousel-indicators position-static mt-4">
+            <button
+              type="button"
+              data-bs-target="#partnersCarousel"
+              data-bs-slide-to="0"
+              class="active bg-orange"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#partnersCarousel"
+              data-bs-slide-to="1"
+              class="bg-white"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-light py-5" id="Services">
+      <div class="container text-center">
+        <div class="row justify-content-center mb-4">
+          <div class="col-auto services-title">
+            <span class="badge bg-orange text-dark py-2 px-4">Services</span>
+          </div>
+        </div>
+        <h2 class="fw-bold mb-5">Why Choose Us?</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <div class="mb-4">
+                  <i class="fas fa-clock fa-3x text-orange"></i>
+                </div>
+                <h5 class="card-title fw-bold">Flexible Timing</h5>
+                <p class="card-text text-muted">
+                  Over 1 million+ homes for sale available on the website, we
+                  can match you with a house you will want to call home.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <div class="mb-4">
+                  <i class="fas fa-chalkboard-teacher fa-3x text-orange"></i>
+                </div>
+                <h5 class="card-title fw-bold">Expert Teachers</h5>
+                <p class="card-text text-muted">
+                  Over 1 million+ homes for sale available on the website, we
+                  can match you with a house you will want to call home.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <div class="mb-4">
+                  <i class="fas fa-headset fa-3x text-orange"></i>
+                </div>
+                <h5 class="card-title fw-bold">24/7 Live Support</h5>
+                <p class="card-text text-muted">
+                  Over 1 million+ homes for sale available on the website, we
+                  can match you with a house you will want to call home.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="bg-light py-5" id="Courses">
+      <div class="container text-center">
+        <div class="row justify-content-center mb-4">
+          <div class="col-auto">
+            <span class="badge bg-orange text-dark py-2 px-4">Courses</span>
+          </div>
+        </div>
+        <h2 class="fw-bold mb-5">Choose Your Favourite Course</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="img/figma.png"
+                    class="img-fluid rounded-start"
+                    alt="Course Image"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-start mb-2"
+                    >
+                      <span class="badge bg-orange">Design</span>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-star text-warning me-1"></i>
+                        <span>4.9</span>
+                      </div>
+                    </div>
+                    <h5 class="card-title fw-bold">
+                      Learn Figma: This is some dummy text demonstrating the
+                      title
+                    </h5>
+                    <p class="text-muted small">Mr.John</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-video text-orange me-1"></i>
+                        <span>45 Videos</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-user-friends text-orange me-1"></i>
+                        <span>2154+ Students</span>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <span class="text-orange fw-bold">$120.00</span>
+                      <a href="#" class="btn btn-orange enroll">Enroll Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="img/figma.png"
+                    class="img-fluid rounded-start"
+                    alt="Course Image"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-start mb-2"
+                    >
+                      <span class="badge bg-orange">Design</span>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-star text-warning me-1"></i>
+                        <span>4.9</span>
+                      </div>
+                    </div>
+                    <h5 class="card-title fw-bold">
+                      Learn Figma: This is some dummy text demonstrating the
+                      title
+                    </h5>
+                    <p class="text-muted small">Mr.John</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-video text-orange me-1"></i>
+                        <span>45 Videos</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-user-friends text-orange me-1"></i>
+                        <span>2154+ Students</span>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <span class="text-orange fw-bold">$120.00</span>
+                      <a href="#" class="btn btn-orange enroll">Enroll Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="img/figma.png"
+                    class="img-fluid rounded-start"
+                    alt="Course Image"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-start mb-2"
+                    >
+                      <span class="badge bg-orange">Design</span>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-star text-warning me-1"></i>
+                        <span>4.9</span>
+                      </div>
+                    </div>
+                    <h5 class="card-title fw-bold">
+                      Learn Figma: This is some dummy text demonstrating the
+                      title
+                    </h5>
+                    <p class="text-muted small">Mr.John</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-video text-orange me-1"></i>
+                        <span>45 Videos</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-user-friends text-orange me-1"></i>
+                        <span>2154+ Students</span>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <span class="text-orange fw-bold">$120.00</span>
+                      <a href="#" class="btn btn-orange enroll">Enroll Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="img/figma.png"
+                    class="img-fluid rounded-start"
+                    alt="Course Image"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-start mb-2"
+                    >
+                      <span class="badge bg-orange">Design</span>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-star text-warning me-1"></i>
+                        <span>4.9</span>
+                      </div>
+                    </div>
+                    <h5 class="card-title fw-bold">
+                      Learn Figma: This is some dummy text demonstrating the
+                      title
+                    </h5>
+                    <p class="text-muted small">Mr.John</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-video text-orange me-1"></i>
+                        <span>45 Videos</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-user-friends text-orange me-1"></i>
+                        <span>2154+ Students</span>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <span class="text-orange fw-bold">$120.00</span>
+                      <a href="#" class="btn btn-orange enroll">Enroll Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="bg-light py-5" id="Categories">
+      <div class="container text-center">
+        <div class="row justify-content-center mb-4">
+          <div class="col-auto">
+            <span class="badge bg-orange text-dark py-2 px-4">Category</span>
+          </div>
+        </div>
+        <h2 class="fw-bold mb-5">Courses By Categories</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+              <div class="mb-3">
+                <i class="fas fa-pencil-alt fa-2x text-orange"></i>
+              </div>
+              <h5 class="fw-bold text-orange">Designing</h5>
+              <p class="text-muted">
+                We craft visually stunning and functional designs to bring your ideas to life.
+              </p>
+              <a href="#" class="text-orange fw-bold">Details</a>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+              <div class="mb-3">
+                <i class="fas fa-code fa-2x text-orange"></i>
+              </div>
+              <h5 class="fw-bold text-orange">Development</h5>
+              <p class="text-muted">
+                Our development team builds robust and scalable applications tailored to your needs.
+              </p>
+              <a href="#" class="text-orange fw-bold">Details</a>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+              <div class="mb-3">
+                <i class="fas fa-bullhorn fa-2x text-orange"></i>
+              </div>
+              <h5 class="fw-bold text-orange">Marketing</h5>
+              <p class="text-muted">
+                We create innovative marketing strategies to help your business grow and thrive.
+              </p>
+              <a href="#" class="text-orange fw-bold">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5" id="Testimonials">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="badge bg-orange text-dark py-2 px-4">Testimonials</span>
+        </div>
+        <h2 class="text-center fw-bold mb-5">Testimonials</h2>
+        <div
+          id="testimonialsCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm p-4">
+                    <div class="d-flex align-items-center mb-3">
+                      <img
+                        src="path/to/your/image1.jpg"
+                        class="rounded-circle me-3"
+                        alt="John Mikel"
+                      />
+                      <div>
+                        <h5 class="fw-bold mb-1 text-orange">John Mikel</h5>
+                        <p class="mb-0">
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-muted">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm p-4">
+                    <div class="d-flex align-items-center mb-3">
+                      <img
+                        src="path/to/your/image2.jpg"
+                        class="rounded-circle me-3"
+                        alt="Mikel John"
+                      />
+                      <div>
+                        <h5 class="fw-bold mb-1 text-orange">Mikel John</h5>
+                        <p class="mb-0">
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                          <i class="fas fa-star text-orange"></i>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-muted">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-orange py-5" id="Contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <img
+              src="img/logo.svg"
+              alt="EduWave Logo"
+              class="mb-3"
+              style="max-width: 200px"
+            />
+            <p class="">
+              EduWave is an online platform offering a wide range of courses to
+              help you learn and grow. Discover new skills and start your
+              journey with us today!
+            </p>
+          </div>
+          <div class="col-md-4 mb-4 mt-5">
+            <h5 class="mb-3">Contact</h5>
+            <ul class="list-unstyled">
+              <li>Address: 1234 Street, California, USA</li>
+              <li>Phone: +965 78643 897</li>
+              <li>Website: EduWave.com</li>
+              <li>Email: info@Edu-Wave.com</li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-4 mt-5">
+            <h5 class="mb-3">Subscribe</h5>
+            <form action="#">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="E-mail" />
+                <button type="submit" class="btn btn-light">
+                  Subscribe Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <small
+            >Created By <span class="fw-bold text-danger">EduWave</span> All
+            Rights Reserved</small
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Toggle Sidebar
+        $("#userIcon").click(function () {
+          $("#authSidebar").addClass("active");
+          $("#overlay").fadeIn();
+        });
+
+        $("#closeSidebar, #overlay").click(function () {
+          $("#authSidebar").removeClass("active");
+          $("#overlay").fadeOut();
+        });
+
+        // Show Register Form
+        $("#showRegister").click(function (e) {
+          e.preventDefault();
+          $("#loginForm").hide();
+          $("#registerForm").show();
+          $("#authTitle").text("Register");
+        });
+
+        // Show Login Form
+        $("#showLogin").click(function (e) {
+          e.preventDefault();
+          $("#registerForm").hide();
+          $("#loginForm").show();
+          $("#authTitle").text("Login");
+        });
+      });
+    </script>
+  </body>
+</html>

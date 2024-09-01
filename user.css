@@ -1,0 +1,41 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.btn-orange {
+    background-color: #fab597;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #e5947f;
+}
+
+.input-group-text {
+    background-color: #ffffff;
+    border-left: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+/* Login/Register Container Styles */
+.login-container,
+.register-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-box,
+.register-box {
+    width: 100%;
+    max-width: 400px;
+}
